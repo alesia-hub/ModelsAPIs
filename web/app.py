@@ -1,5 +1,5 @@
 from io import BytesIO
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_restful import Api, Resource
 from DBConnect import MongoConnect
 import requests
@@ -13,6 +13,11 @@ from PIL import Image
 
 app = Flask(__name__)
 api = Api(app)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 
 # Load pre-trained model from ImageNet - global DB of pre-trained models
 pretrained_model = applications.InceptionV3(include_top=True,
@@ -85,7 +90,7 @@ class Register(Resource):
                                      "You have successfully signed up for the API.")
 
 class Classify(Resource):
-    """ Class will run Imnage Classification and will print predition percentage on what is the image about.
+    """ Class will run Image Classification and will print predition percentage on what is the image about.
     Using pre-trained models from ImageNet online source.
     """
     def post(self):

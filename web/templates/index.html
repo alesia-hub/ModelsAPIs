@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskAPI</title>
+</head>
+<body>
+    <h1>My Flask API communication page</h1>
+    <h2>API will run at the back end on this URL and following routing path:</h2>
+    <h4>API will connect to MongoDB to Register user. To run comparisong need to add user and ahve tokens. 
+         By default all users have 4 tokens.
+    </h4>
+    <ul>
+        <li>Go to /register to register in DB. </li>
+        <li>Go to /refill if you want to add more tokens.</li>
+        <li>Go to /classify if you want to run classification on the Image.</li>
+        <li>Go to /compare if you want to compare two texts for similarity.</li>
+        
+    </ul>
+    
+    <!-- <form action="/register" method="post">
+        <input type="text" name="username" placeholder="Enter your Username">
+        <input type="text" name="password" placeholder="Enter your Username">
+        <input type="submit" value="Send">
+    </form>
+    <p id="response"></p> -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
