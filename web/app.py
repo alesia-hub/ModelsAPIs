@@ -102,7 +102,7 @@ class Classify(Resource):
         image_url = posted_data["url"]
 
         if not user_exists(username):
-            return json_message_response(301,'User already exits. Please select uinque username.')
+            return json_message_response(301,'User does not exists. Please register to use the service.')
 
         correct_psw = verify_password(username, password)
         if not isinstance(correct_psw, int):
