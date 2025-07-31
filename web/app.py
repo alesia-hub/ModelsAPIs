@@ -5,7 +5,7 @@ from DBConnect import MongoConnect
 import requests
 import bcrypt
 import numpy as np
-import spacy
+# import spacy
 
 import keras
 from keras import applications, utils
@@ -149,6 +149,7 @@ class Classify(Resource):
             ret_json[pred[1]] = float(pred[2]*100)
         return jsonify(ret_json)
 
+'''
 class Detect(Resource):
     """ Class responsible for text comparisong and finding similarities.
     Using spacy library to run similarity.
@@ -174,6 +175,7 @@ class Detect(Resource):
             return json_message_response(301, 'Not Enough Tokens.')
 
         # Comparisong:
+        
         nlp = spacy.load('en_core_web_sm')
 
         text1 = nlp(text1)
@@ -197,7 +199,7 @@ class Detect(Resource):
             "similarity": ratio,
             "Message": "Similarity score calculated successfully."
         }
-        return ret_json
+        return ret_json'''
 
 class Refill(Resource):
     """Class for supporting refill API: to add up more tokens.
@@ -228,7 +230,7 @@ class Refill(Resource):
 # Registration of Resources for API:
 api.add_resource(Register, '/register')
 api.add_resource(Classify, '/classify')
-api.add_resource(Detect, '/compare')
+# api.add_resource(Detect, '/compare')
 api.add_resource(Refill, '/refill')
 
 if __name__ == '__main__':
