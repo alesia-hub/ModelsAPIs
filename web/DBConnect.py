@@ -55,7 +55,7 @@ class MongoConnect():
         return list(documents)
 
     def update_collection(self, collection, _filter, _update):
-         """ Method will filter documents from the given Collection 
-            and will update found document."""
-         self.collection = self._db_connect[collection]
-         self.collection.update_one(_filter, _update)
+        """ Method will filter documents from the given Collection 
+           and will update found document."""
+        self.collection = self._db_connect[collection]
+        self.collection.update_one(_filter, _update)

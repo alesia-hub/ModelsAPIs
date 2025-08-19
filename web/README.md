@@ -38,7 +38,7 @@ Using MongoDB web service version hosted in MongoDB clouds.
     Every user will get default number of tokens to use for future requests. 
 
     Now test the program by sending requests to the following url:
-        POST request to: **http://192.168.0.26:5000/classify**
+        POST request to: **[BASE_URL]/classify**
     
         Body: row JSON:
         ```json
